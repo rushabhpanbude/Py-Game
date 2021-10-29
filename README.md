@@ -1,2 +1,2 @@
 # Py-Game
-Developed a python snake game
+Developed a python snake game.
