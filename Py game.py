@@ -1,9 +1,11 @@
+# Import libraries
 import pygame
 import time
 import random
 
 pygame.init()
 
+# Define Colors
 white = (255,255,255)
 black = (0,0,0)
 red = (255,0,0)
@@ -11,9 +13,11 @@ green = (0,255,0)
 blue = (0,0,255)
 purple = (128,0,128)
 
+# Window size
 display_width = 800
 display_height = 600
 
+# Time and speed
 clock = pygame.time.Clock()
 block_size = 10
 snake_speed = 15
@@ -21,6 +25,7 @@ snake_speed = 15
 
 font = pygame.font.SysFont(None, 25)
 
+# Define Snake
 def snake(block_size, snakeList, snakeHead, lead_x, lead_y):
     for XnY in snakeList:
         pygame.draw.rect(gameDisplay, purple, [XnY[0],XnY[1],block_size,block_size])
@@ -30,6 +35,7 @@ def message_to_screen(msg,color,x,y):
     screen_text = font.render(msg, True, color)
     gameDisplay.blit(screen_text, [x,y])
 
+# Initialise game window
 gameDisplay = pygame.display.set_mode((800,600))
 pygame.display.set_caption("Snake game by R3sh")
 
@@ -50,6 +56,7 @@ def gameLoop():
     randAppleX = round(random.randrange(0, display_width - block_size)/block_size)*block_size
     randAppleY = round(random.randrange(0, display_height - block_size)/block_size)*block_size
 
+# Main logic
     while not gameExit:
         while gameOver == True:
             gameDisplay.fill(white)
