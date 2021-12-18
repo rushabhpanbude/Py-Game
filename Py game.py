@@ -23,7 +23,7 @@ block_size = 10
 snake_speed = 15
 
 
-font = pygame.font.SysFont(None, 25)
+font = pygame.font.SysFont("comicsansms", 18)
 
 # Define Snake
 def snake(block_size, snakeList, snakeHead, lead_x, lead_y):
